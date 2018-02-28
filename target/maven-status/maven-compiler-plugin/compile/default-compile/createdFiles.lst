@@ -1,0 +1,8 @@
+org\mongodb\User.class
+org\mongodb\Jeu.class
+org\mongodb\Kill.class
+org\mongodb\Musique.class
+org\mongodb\MusiqueDAO.class
+org\mongodb\UserDAO.class
+org\mongodb\ConnectionBase.class
+org\mongodb\JeuDAO.class
