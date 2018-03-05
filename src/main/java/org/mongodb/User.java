@@ -29,6 +29,9 @@ public class User {
     private String sexe;
     private String nationalite;
     private String statut;
+    private String tokken = "";
+    private String dateExpire;
+
 
     public User(String id, String email, String pseudo, String mdp, String sexe, String nationalite, String statut) {
         this.id = id;
@@ -38,6 +41,38 @@ public class User {
         this.sexe = sexe;
         this.nationalite = nationalite;
         this.statut = statut;
+    }
+
+    public User(String email, String pseudo, String mdp, String sexe, String nationalite, String statut) {
+        this.email = email;
+        this.pseudo = pseudo;
+        this.mdp = mdp;
+        this.sexe = sexe;
+        this.nationalite = nationalite;
+        this.statut = statut;
+    }
+
+    public User(String email, String pseudo, String mdp, String sexe, String nationalite, String statut,String tokken,int test,String dateExpire) {
+        this.email = email;
+        this.pseudo = pseudo;
+        this.mdp = mdp;
+        this.sexe = sexe;
+        this.nationalite = nationalite;
+        this.statut = statut;
+        this.tokken = tokken;
+        this.dateExpire = dateExpire;
+    }
+     
+    public User(String id, String email, String pseudo, String mdp, String sexe, String nationalite, String statut, String tokken, int test, String dateExpire) {
+        this.id = id;
+        this.email = email;
+        this.pseudo = pseudo;
+        this.mdp = mdp;
+        this.sexe = sexe;
+        this.nationalite = nationalite;
+        this.statut = statut;
+        this.tokken = tokken;
+        this.dateExpire = dateExpire;
     }
 
     public String getId() {
@@ -95,6 +130,24 @@ public class User {
     public void setStatut(String statut) {
         this.statut = statut;
     }
+
+    public String getTokken() {
+        return tokken;
+    }
+
+    public void setTokken(String tokken) {
+        this.tokken = tokken;
+    }
+
+    public String getDateExpire() {
+        return dateExpire;
+    }
+
+    public void setDateExpire(String dateExpire) {
+        this.dateExpire = dateExpire;
+    }
+    
+    
 }
 
 

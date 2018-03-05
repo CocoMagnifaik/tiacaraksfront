@@ -124,7 +124,7 @@ public class UserDAO {
                 DB db = mon.getConnection();
                 DBCollection table = db.getCollection("users");
                 BasicDBObject searchQuery = new BasicDBObject();
-                searchQuery.put("pseudo", nom);
+                searchQuery.put("email", nom);
                 searchQuery.put("mdp",pwd);
 
                 cursor = table.find(searchQuery);
@@ -184,7 +184,7 @@ public class UserDAO {
             return tabCustomers;		
 	}
 
-        public void insertUsers(String email, String pseudo, String mdp, String sexe, String nationalite, String statut) throws Exception{
+        public void insertUsers(String email, String pseudo, String mdp, String sexe, String nationalite, String statut, String tokken, String dateExpire) throws Exception{
             try {
                 DB db = mon.getConnection();
                 DBCollection table = db.getCollection("users");
@@ -195,6 +195,8 @@ public class UserDAO {
                 document.put("sexe",sexe);
                 document.put("nationalite",nationalite);
                 document.put("statut",statut);
+                document.put("tokken",tokken);
+                document.put("dateExpire",dateExpire);
                 table.insert(document);
             } catch(MongoException e){
                 e.printStackTrace();

@@ -1,7 +1,6 @@
 package org.mongodb;
 
 import java.net.UnknownHostException;
-
 import com.mongodb.MongoException;
 
 public class Kill {
@@ -13,7 +12,12 @@ public class Kill {
                     for(int i = 0; i < us.length; i++){
                         System.out.println(us[i].getEmail());
                     }
-
+                    
+                    User[] use = user.findUsers("Coco","coco");
+                    for(int i = 0; i < use.length; i++){
+                        System.out.println("Eto COCO OOOOO:"+use[i].getEmail());
+                    }
+                    
                     System.out.println("GGGGGGGG");
                     User[] us1 = user.findUserById("5a678e25734d1d7c6797810e");
                     for(int i = 0; i < us1.length; i++){

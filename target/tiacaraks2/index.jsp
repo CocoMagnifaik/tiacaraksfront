@@ -1,3 +1,6 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.UUID"%>
 <%@page import="org.mongodb.Musique"%>
 <%@page import="org.mongodb.MusiqueDAO"%>
 <%@page import="org.mongodb.UserDAO"%>
@@ -49,8 +52,12 @@
                 String mdp = request.getParameter("mdp");
                 String sexe = request.getParameter("sexe");
                 String nationalite = request.getParameter("nationalite");
-                
-                user.insertUsers(email, pseudo, mdp, sexe, nationalite, "0");
+                UUID idOne = UUID.randomUUID();
+                String keyGen = String.valueOf(idOne);
+                Calendar c = Calendar.getInstance();
+                c.add(Calendar.DAY_OF_WEEK,2);
+                Date after=c.getTime();
+                user.insertUsers(email, pseudo, mdp, sexe, nationalite, "0", keyGen, ""+after);
         %>    
                     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
                     <script type="text/javascript">
@@ -164,7 +171,7 @@
                         <div class="bg-img bg-img-3"></div>
                         <div class="slide-caption">
                             <div class="caption-content">
-                                <span>Il ne reste plus qu'a t'inscrire ;-)</span>
+                                <span>Il ne te reste plus qu'a t'inscrire ;-)</span>
                             </div>
                         </div>
                     </div>
@@ -285,7 +292,7 @@
                                 <option value="Autre">Autre</option>
                             </select>		
                     </div><br>
-                    <button type="submit" class="btn btn-block btn-info" style="background: #c11"> S'inscrire </button>
+                    <button type="submit" class="btn btn-block btn-info" style="background: #28a745"> S'inscrire </button>
                 </form>
             </div>
         </div>

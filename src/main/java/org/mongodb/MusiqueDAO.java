@@ -174,13 +174,15 @@ public class MusiqueDAO {
             }
 	}
         
-        public void updateMusique(String rempl, String paroles) throws Exception{
+        public void updateMusique(String arempl, String paroles) throws Exception{
             DB db = mon.getConnection();
             DBCollection table = db.getCollection("chanson");
             BasicDBObject query = new BasicDBObject();
-            query.put("paroles", rempl);
+            // Parole a remplacer
+            query.put("paroles", arempl);
 
             BasicDBObject newDocument = new BasicDBObject();
+            // Nouveau mot
             newDocument.put("paroles", paroles);
 
             BasicDBObject updateObj = new BasicDBObject();
